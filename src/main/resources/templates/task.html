@@ -297,8 +297,8 @@
             <div th:if="${mode == 'MODE_NEW'}">
                 <div class="container">
                     <div class="row">
-                        <form autocomplete="off" action="#" th:action="@{/admin/demos/save}"
-                              th:object="${demo}" method="post" class="form-horizontal"
+                        <form autocomplete="off" action="#" th:action="@{/admin/tasks/save}"
+                              th:object="${task}" method="post" class="form-horizontal"
                               role="form">
                             <fieldset>
                                 <!-- Form Name -->
@@ -319,7 +319,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value=""  class="form-control" placeholder="Имя" th:field="${demo.name}">
+                  <input type="text" title="Employee ID" value=""  class="form-control" placeholder="Имя" th:field="${task.name}">
                                  </div>
                             </div>
                               </div>
@@ -333,7 +333,7 @@
                   <input type="text" title="Employee ID" value="" class="form-control" placeholder="Фамилия" th:field="${task.surname}">
                                  </div>
                             </div>
-                            
+                      
                                 		 <div class="col-md-4 control-label">
              					 <label class="control-label">Отчество*</label>
             				     <div class="input-group">             
@@ -367,30 +367,34 @@
 						              </div>
 						            </div>
 						
-						       		          <div class="col-md-4 control-label">
+						   			  <div class="col-md-4 control-label">
 						              <label class="control-label">Место рождения*</label>
 						              <div class="input-group">             
 						                  <span class="input-group-addon">
-						              <i class="fa fa-map-marker" aria-hidden="true"></i>
+						              <i class="fa fa-male" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Место рождения" th:field="${task.placebirth}">
+						              <select name="gender" title="Gender" th:field="${task.placebirth}" style="padding: 5px 5px;text-transform: capitalize;width: 305px;height: 34px;">
+						                <option th:value="${p}" th:each="p: ${countryObject}" th:text="${p}"></option>  
+						                </select>         
 						              </div>
 						            </div>
 						              <div class="clearfix"> </div>
 						            </div>
 								
 						    	 <div class="vali-form-group">
-						           	        <div class="col-md-4 control-label">
+						       	 	 <div class="col-md-4 control-label">
 						              <label class="control-label">Национальность*</label>
 						              <div class="input-group">             
 						                  <span class="input-group-addon">
-						              <i class="fa fa-map-marker" aria-hidden="true"></i>
+						              <i class="fa fa-male" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Национальность" th:field="${task.national}">
+						              <select name="gender" title="Gender" th:field="${task.national}" style="padding: 5px 5px;text-transform: capitalize;width: 305px;height: 34px;">
+						                <option th:value="${p}" th:each="p: ${nationalObject}" th:text="${p}"></option>  
+						                </select>         
 						              </div>
 						            </div>
 						
-						
+		
 						                   <div class="col-md-4 control-label">
 						              <label class="control-label">Гражданство*</label>
 						              <div class="input-group">             
@@ -416,18 +420,22 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value=""  class="form-control" placeholder="Пол">
+               <select name="gender" title="Gender" th:field="${task.gender}" style="padding: 5px 5px;text-transform: capitalize;width: 305px;height: 34px;">
+						                <option th:value="${p}" th:each="p: ${genderObject}" th:text="${p}"></option>  
+						                </select> 
                                  </div>
                             </div>
                               </div>
-    
+    	 	
                             <div class="col-md-4 control-label">
              					 <label class="control-label">Семейное положение*</label>
             				       <div class="input-group">             
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Семейное положение">
+        <select name="gender" title="Gender" th:field="${task.status}" style="padding: 5px 5px;text-transform: capitalize;width: 305px;height: 34px;">
+						                <option th:value="${p}" th:each="p: ${familyObject}" th:text="${p}"></option>  
+						                </select> 
                                  </div>
                             </div>
                             
@@ -457,7 +465,7 @@
 				                  <span class="input-group-addon">
 				              <i class="fa fa-picture-o" aria-hidden="true"></i>
 				              </span>
-				              <input type="file" name="pfimg" title="Изображение профиля" class="form-control" name="fileupload" th:field="${task.pic}" >
+				              <input type="file" name="pfimg" title="Изображение профиля" class="form-control" name="fileupload"  >
 				              </div>
 				            </div>
                                 </div>

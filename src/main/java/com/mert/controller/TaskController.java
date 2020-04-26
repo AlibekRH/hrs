@@ -1,7 +1,10 @@
 package com.mert.controller;
 
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+
 import javax.validation.Valid;
 import com.mert.model.User;
 import com.mert.service.UserService;
@@ -9,16 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.mert.service.DemoService;
 import com.mert.service.TaskService;
 import com.mert.service.UserTaskService;
-import com.mert.model.Demo;
+import com.mert.model.Country;
 import com.mert.model.Task;
 
 @Controller
@@ -28,8 +30,7 @@ public class TaskController {
 
 	@Autowired
 	private TaskService taskService;
-	@Autowired
-	private DemoService demoService;
+
 	@Autowired
 	private UserTaskService userTaskService;
 
@@ -37,16 +38,30 @@ public class TaskController {
 	private UserService userService;
 
 	@RequestMapping(value="/new", method = RequestMethod.GET)
-	public ModelAndView newTask(){
+	public ModelAndView newTask(Model model){
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("task", new Task());
-		modelAndView.addObject("demo", new Demo());
-
-		modelAndView.addObject("demos", demoService.findAll());
+		modelAndView.addObject("tasks", taskService.findAll());
 		modelAndView.addObject("auth", getUser());
 		modelAndView.addObject("control", getUser().getRole().getRole());
 		modelAndView.addObject("mode", "MODE_NEW");
 		modelAndView.setViewName("task");
+		
+	//	List<String> countryList = Arrays.asList("US","China");
+	//	model.addAttribute("countryList", countryList);
+	//	List<Country> countryObject = Arrays.asList(
+		//		new Country("US","United"),
+	//			new Country("CH","China")	
+		//		);
+		//model.addAttribute("countryObject", countryObject);
+		List<String> countryObject = Arrays.asList("Алматы","Нур-Султан","Талдыкорган","Кызылорда","Шымкент","Тараз");
+		model.addAttribute("countryObject",countryObject);
+		List<String> nationalObject = Arrays.asList("Казах","Русский","Украинц","Узбек","Татар","Уйгыр");
+		model.addAttribute("nationalObject",nationalObject);
+		List<String> genderObject = Arrays.asList("Женский","Мужской");
+		model.addAttribute("genderObject",genderObject);
+		List<String> familyObject = Arrays.asList("Замужем","Женат","Не замужем","Не женат");
+		model.addAttribute("familyObject",familyObject);
 		return modelAndView;
 	}
 
@@ -70,6 +85,7 @@ public class TaskController {
 		modelAndView.addObject("control", getUser().getRole().getRole());
 		modelAndView.addObject("mode", "MODE_ALL");
 		modelAndView.setViewName("task");
+		
 		return modelAndView;
 	}
 

@@ -5,9 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,6 +30,9 @@ public class Task implements Serializable {
 	private String placebirth;
 	private String national;
 	private String citizenship;
+	private String country;
+	private String gender;
+	private String status;
 	private byte[] pic;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateCreated;
@@ -39,7 +40,6 @@ public class Task implements Serializable {
 	@NotNull
 	@OneToMany(mappedBy = "task")
 	private Set<UserTask> userTask = new HashSet<UserTask>();
-	
 
 	public int getId() {
 		return id;
@@ -143,5 +143,30 @@ public class Task implements Serializable {
 	public void setUserTask(Set<UserTask> userTask) {
 		this.userTask = userTask;
 	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 
 }
