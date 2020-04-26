@@ -62,7 +62,7 @@
                                     <span class="hidden-xs" th:utext="${auth.name}"></span>
                                     <small><span class="hidden-xs" th:utext="${auth.email}"></span></small>
                                 </p>
-                            </li>
+                            </li>z
                             <!-- Menu Body --
                             <!-- Menu Footer-->
                             <li class="user-footer">
@@ -307,7 +307,7 @@
      
 				<div class="container">
     		<div class="tabs">
-     		 <div id="content-1">
+		 <div id="content-1">
                             <div class="validation-form">
                                 
                                  <div class="vali-form-group">
@@ -380,34 +380,7 @@
 						            </div>
 						              <div class="clearfix"> </div>
 						            </div>
-								
-						    	 <div class="vali-form-group">
-						       	 	 <div class="col-md-4 control-label">
-						              <label class="control-label">Национальность*</label>
-						              <div class="input-group">             
-						                  <span class="input-group-addon">
-						              <i class="fa fa-male" aria-hidden="true"></i>
-						              </span>
-						              <select name="gender" title="Gender" th:field="${task.national}" style="padding: 5px 5px;text-transform: capitalize;width: 305px;height: 34px;">
-						                <option th:value="${p}" th:each="p: ${nationalObject}" th:text="${p}"></option>  
-						                </select>         
-						              </div>
-						            </div>
-						
-		
-						                   <div class="col-md-4 control-label">
-						              <label class="control-label">Гражданство*</label>
-						              <div class="input-group">             
-						                  <span class="input-group-addon">
-						              <i class="fa fa-globe" aria-hidden="true"></i>
-						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Гражданство" th:field="${task.citizenship}">
-						              </div>
-						              
-						            </div>						           
-						            </div>
-
-						              <div class="clearfix"> </div>
+					
 						<!-- - -->
                                 </div>
 						<!--  -->
@@ -445,7 +418,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Образование" >
+                        <input type="text" title="Employee ID"  class="form-control" placeholder="Образование" th:field="${task.education}">
                                  </div>
                             </div>
                                
@@ -455,7 +428,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="ИИН">
+                        <input type="text" title="Employee ID"  class="form-control" placeholder="ИИН" th:field="${task.iin}">
                                  </div>
                             </div>
                             
@@ -484,7 +457,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Домашний телефон">
+                        <input type="text" title="Employee ID"  class="form-control" placeholder="Домашний телефон" th:field="${task.telephone}">
                                  </div>
                             </div>
 						
@@ -494,7 +467,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control" th:field="${task.telwork}">
 						              </div>
 						            </div>	
 						                       <div class="col-md-4 control-label">
@@ -503,7 +476,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="Мобильный" class="form-control">
+						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="Мобильный" class="form-control" th:field="${task.mobile}">
 						              </div>
 						            </div>	
 						              <div class="clearfix"> </div>
@@ -526,7 +499,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Документ">
+                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Документ" th:field="${task.document}">
                                  </div>
                             </div>
                               </div>
@@ -537,7 +510,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Серия" >
+                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Серия" th:field="${task.seria}">
                                  </div>
                             </div>
                             
@@ -547,7 +520,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Номер документа" >
+                        <input type="text" title="Employee ID"  class="form-control" placeholder="Номер документа" th:field="${task.numdoc}">
                                  </div>
                             </div>
                                 </div>
@@ -560,7 +533,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Кем выдан документ">
+                        <input type="text" title="Employee ID"  class="form-control" placeholder="Кем выдан документ" th:field="${task.isdoc}">
                                  </div>
                             </div>
 						
@@ -570,7 +543,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control" th:field="${task.isdate}">
 						              </div>
 						            </div>
 						
@@ -580,7 +553,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control" th:field="${task.undate}">
 						              </div>
 						            </div>
 						              <div class="clearfix"> </div>
@@ -593,7 +566,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-map-marker" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Национальность">
+						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Национальность" th:field="${task.national}">
 						              </div>
 						            </div>
 						
@@ -604,7 +577,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-globe" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Гражданство">
+						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Гражданство" th:field="${task.citizenship}">
 						              </div>
 						              
 						            </div>
@@ -838,7 +811,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" readonly title="Employee ID" value=""  class="form-control" placeholder="Пол">
+                  <input type="text" readonly readonly title="Employee ID" value=""  class="form-control" placeholder="Пол">
                                  </div>
                             </div>
                               </div>
@@ -879,7 +852,7 @@
 				                  <span class="input-group-addon">
 				              <i class="fa fa-picture-o" aria-hidden="true"></i>
 				              </span>
-				              <input type="file" readonly name="pfimg" title="Изображение профиля" class="form-control" name="fileupload" th:field="${task.pic}" >
+				              <input type="file" readonly readonly name="pfimg" title="Изображение профиля" class="form-control" name="fileupload" th:field="${task.pic}" >
 				              </div>
 				            </div>
                                 </div>
@@ -940,7 +913,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Документ">
+                  <input type="text" readonly title="Employee ID" value="" class="form-control" placeholder="Документ">
                                  </div>
                             </div>
                               </div>
@@ -951,7 +924,7 @@
                                      <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                  <input type="text" title="Employee ID" value="" class="form-control" placeholder="Серия" >
+                  <input type="text" readonly title="Employee ID" value="" class="form-control" placeholder="Серия" >
                                  </div>
                             </div>
                             
@@ -961,7 +934,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Номер документа" >
+                        <input type="text" readonly title="Employee ID"  class="form-control" placeholder="Номер документа" >
                                  </div>
                             </div>
                                 </div>
@@ -974,7 +947,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Кем выдан документ">
+                        <input type="text" readonly title="Employee ID"  class="form-control" placeholder="Кем выдан документ">
                                  </div>
                             </div>
 						
@@ -984,7 +957,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" readonly id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
 						              </div>
 						            </div>
 						
@@ -994,7 +967,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" readonly id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
 						              </div>
 						            </div>
 						              <div class="clearfix"> </div>
@@ -1007,7 +980,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-map-marker" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Национальность">
+						              <input type="text" readonly name="mname" title="Middel Name" class="form-control" placeholder="Национальность">
 						              </div>
 						            </div>
 						
@@ -1018,7 +991,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-globe" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" name="mname" title="Middel Name" class="form-control" placeholder="Гражданство">
+						              <input type="text" readonly name="mname" title="Middel Name" class="form-control" placeholder="Гражданство">
 						              </div>
 						              
 						            </div>
@@ -1046,7 +1019,7 @@
                                  <span class="input-group-addon">
                                  <i class="fa fa-user" aria-hidden="true"></i>
                              </span>
-                        <input type="text" title="Employee ID"  class="form-control" placeholder="Кем выдан документ">
+                        <input type="text" readonly title="Employee ID"  class="form-control" placeholder="Кем выдан документ">
                                  </div>
                             </div>
 						
@@ -1056,7 +1029,7 @@
 						                  <span class="input-group-addon">
 						              <i class="fa fa-calendar" aria-hidden="true"></i>
 						              </span>
-						              <input type="text" id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
+						              <input type="text" readonly id="Birthdate" title="Birth Date" name="bdate" placeholder="1998.12.21" class="form-control">
 						              </div>
 						            </div>		
 						              <div class="clearfix"> </div>

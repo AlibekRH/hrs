@@ -28,12 +28,24 @@ public class Task implements Serializable {
 	private String birthday;
 	private String tabelnum;
 	private String placebirth;
-	private String national;
-	private String citizenship;
 	private String country;
 	private String gender;
 	private String status;
+	private String education;
+	private String iin;
 	private byte[] pic;
+	private String telephone;
+	private String telwork;
+	private String mobile;
+	private String document;
+	private String seria;
+	private String numdoc;
+	private String isdoc;
+	private String isdate;
+	private String undate;
+	private String national;
+	private String citizenship;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateCreated;
 	private boolean finished;
@@ -166,6 +178,94 @@ public class Task implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
+	public String getIin() {
+		return iin;
+	}
+
+	public void setIin(String iin) {
+		this.iin = iin;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getTelwork() {
+		return telwork;
+	}
+
+	public void setTelwork(String telwork) {
+		this.telwork = telwork;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getDocument() {
+		return document;
+	}
+
+	public void setDocument(String document) {
+		this.document = document;
+	}
+
+	public String getSeria() {
+		return seria;
+	}
+
+	public void setSeria(String seria) {
+		this.seria = seria;
+	}
+
+	public String getNumdoc() {
+		return numdoc;
+	}
+
+	public void setNumdoc(String numdoc) {
+		this.numdoc = numdoc;
+	}
+
+	public String getIsdoc() {
+		return isdoc;
+	}
+
+	public void setIsdoc(String isdoc) {
+		this.isdoc = isdoc;
+	}
+
+	public String getIsdate() {
+		return isdate;
+	}
+
+	public void setIsdate(String isdate) {
+		this.isdate = isdate;
+	}
+
+	public String getUndate() {
+		return undate;
+	}
+
+	public void setUndate(String undate) {
+		this.undate = undate;
 	}
 
 
